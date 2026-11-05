@@ -25,13 +25,16 @@ jobs:
           channel: 'stable'
 
       - name: Install dependencies
-        working-directory: lab_04
-        run: flutter pub get
+        run: |
+          cd lab_04
+          flutter pub get
 
       - name: Analyze project code
-        working-directory: lab_04
-        run: flutter analyze
+        run: |
+          cd lab_04
+          flutter analyze
 
       - name: Run tests
-        working-directory: lab_04
-        run: flutter test
+        run: |
+          cd lab_04
+          flutter test
