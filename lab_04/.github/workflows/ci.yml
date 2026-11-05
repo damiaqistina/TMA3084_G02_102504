@@ -10,10 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: ./lab_04
-
     steps:
       - uses: actions/checkout@v3
 
@@ -29,10 +25,13 @@ jobs:
           channel: 'stable'
 
       - name: Install dependencies
+        working-directory: lab_04
         run: flutter pub get
 
       - name: Analyze project code
+        working-directory: lab_04
         run: flutter analyze
 
       - name: Run tests
+        working-directory: lab_04
         run: flutter test
